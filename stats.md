@@ -1,5 +1,5 @@
 # Statistics
-> :timer_clock: Last update: 03/19/2022 at 13:00:29 - Domains analyzed count: 100000.
+> :timer_clock: Last update: 03/19/2022 at 20:35:34 - Domains analyzed count: 200000.
 
 ## Global usage of header 'strict-transport-security'
 
@@ -7,8 +7,8 @@ Provide the distribution of usage of the header 'strict-transport-security' acro
 
 ```mermaid
 pie
-	"Using it" : 27.8
-	"Not using it" : 72.2
+	"Using it" : 25.15
+	"Not using it" : 74.85
 
 ```
 
@@ -19,8 +19,8 @@ Provide the distribution of usage of the header 'x-frame-options' across all dom
 
 ```mermaid
 pie
-	"Using it" : 29.46
-	"Not using it" : 70.54
+	"Using it" : 26.92
+	"Not using it" : 73.08
 
 ```
 
@@ -31,8 +31,8 @@ Provide the distribution of usage of the header 'x-content-type-options' across 
 
 ```mermaid
 pie
-	"Using it" : 27.45
-	"Not using it" : 72.55
+	"Using it" : 25.17
+	"Not using it" : 74.83
 
 ```
 
@@ -43,8 +43,8 @@ Provide the distribution of usage of the header 'content-security-policy' across
 
 ```mermaid
 pie
-	"Using it" : 12.13
-	"Not using it" : 87.86
+	"Using it" : 11.0
+	"Not using it" : 89.0
 
 ```
 
@@ -55,8 +55,8 @@ Provide the distribution of usage of the header 'x-permitted-cross-domain-polici
 
 ```mermaid
 pie
-	"Using it" : 2.26
-	"Not using it" : 97.74
+	"Using it" : 2.21
+	"Not using it" : 97.79
 
 ```
 
@@ -67,8 +67,8 @@ Provide the distribution of usage of the header 'referrer-policy' across all dom
 
 ```mermaid
 pie
-	"Using it" : 10.17
-	"Not using it" : 89.83
+	"Using it" : 9.44
+	"Not using it" : 90.56
 
 ```
 
@@ -91,8 +91,8 @@ Provide the distribution of usage of the header 'cross-origin-embedder-policy' a
 
 ```mermaid
 pie
-	"Using it" : 0.09
-	"Not using it" : 99.91
+	"Using it" : 0.08
+	"Not using it" : 99.92
 
 ```
 
@@ -103,8 +103,8 @@ Provide the distribution of usage of the header 'cross-origin-opener-policy' acr
 
 ```mermaid
 pie
-	"Using it" : 0.43
-	"Not using it" : 99.57
+	"Using it" : 0.34
+	"Not using it" : 99.66
 
 ```
 
@@ -115,8 +115,8 @@ Provide the distribution of usage of the header 'cross-origin-resource-policy' a
 
 ```mermaid
 pie
-	"Using it" : 0.34
-	"Not using it" : 99.66
+	"Using it" : 0.23
+	"Not using it" : 99.78
 
 ```
 
@@ -127,8 +127,8 @@ Provide the distribution of usage of the header 'cache-control' across all domai
 
 ```mermaid
 pie
-	"Using it" : 54.81
-	"Not using it" : 45.19
+	"Using it" : 53.6
+	"Not using it" : 46.4
 
 ```
 
@@ -139,8 +139,8 @@ Provide the distribution of usage of the header 'feature-policy' across all doma
 
 ```mermaid
 pie
-	"Using it" : 1.09
-	"Not using it" : 98.91
+	"Using it" : 0.92
+	"Not using it" : 99.08
 
 ```
 
@@ -151,8 +151,8 @@ Provide the distribution of usage of the header 'permissions-policy' across all 
 
 ```mermaid
 pie
-	"Using it" : 5.03
-	"Not using it" : 94.97
+	"Using it" : 4.68
+	"Not using it" : 95.32
 
 ```
 
@@ -163,8 +163,8 @@ Provide the distribution of usage of the header 'expect-ct' across all domains a
 
 ```mermaid
 pie
-	"Using it" : 25.99
-	"Not using it" : 74.01
+	"Using it" : 25.48
+	"Not using it" : 74.52
 
 ```
 
@@ -175,8 +175,8 @@ Provide the distribution of usage of the header 'public-key-pins' across all dom
 
 ```mermaid
 pie
-	"Using it" : 0.07
-	"Not using it" : 99.93
+	"Using it" : 0.06
+	"Not using it" : 99.94
 
 ```
 
@@ -187,8 +187,8 @@ Provide the distribution of usage of the header 'x-xss-protection' across all do
 
 ```mermaid
 pie
-	"Using it" : 20.46
-	"Not using it" : 79.54
+	"Using it" : 18.59
+	"Not using it" : 81.41
 
 ```
 
@@ -199,8 +199,8 @@ Provide the distribution of usage of the header 'x-frame-options' across all dom
 
 ```mermaid
 pie
-	"Insecure conf" : 1.05
-	"Secure conf" : 98.95
+	"Insecure conf" : 1.98
+	"Secure conf" : 98.02
 
 ```
 
@@ -211,8 +211,8 @@ Provide the distribution of usage of the '[preload](https://developer.mozilla.or
 
 ```mermaid
 pie
-	"Using it" : 20.73
-	"Not using it" : 79.27
+	"Using it" : 18.88
+	"Not using it" : 81.12
 
 ```
 
