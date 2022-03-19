@@ -11,7 +11,7 @@ import time
 import concurrent.futures
 
 # Constants
-NUMBER_OF_DOMAINS_TO_TAKE = 30000
+NUMBER_OF_DOMAINS_TO_TAKE = 100000
 VERBOSE = False
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0"
 DATA_FOLDER = "../data"
@@ -71,7 +71,7 @@ def worker(domain):
             records = []
             for sec_header in sec_headers:
                 records.append(
-                    (domain, sec_header, sec_headers[sec_header]))
+                    (domain, sec_header.lower(), sec_headers[sec_header]))
             with sqlite3.connect(DATA_DB_FILE, timeout=300) as connection:
                 curs = connection.cursor()
                 curs.executemany(
