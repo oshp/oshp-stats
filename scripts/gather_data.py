@@ -11,7 +11,7 @@ import time
 import concurrent.futures
 
 # Constants
-NUMBER_OF_DOMAINS_TO_TAKE = 10000
+NUMBER_OF_DOMAINS_TO_TAKE = 20000
 VERBOSE = False
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0"
 DATA_FOLDER = "../data"
