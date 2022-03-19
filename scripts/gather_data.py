@@ -54,7 +54,8 @@ def get_security_headers(url):
 
 
 def print_progress(msg):
-    print(f"\r{msg}", end="", flush=True)
+    if VERBOSE:
+        print(f"\r{msg}", end="", flush=True)
 
 
 def worker(domain):
