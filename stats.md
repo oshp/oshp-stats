@@ -1,5 +1,5 @@
 # Statistics
-> :timer_clock: Last update: 03/19/2022 at 10:48:10 - Domains analyzed count: 10000.
+> :timer_clock: Last update: 03/19/2022 at 13:00:29 - Domains analyzed count: 100000.
 
 ## Global usage of header 'strict-transport-security'
 
@@ -7,8 +7,8 @@ Provide the distribution of usage of the header 'strict-transport-security' acro
 
 ```mermaid
 pie
-	"Using it" : 44.28
-	"Not using it" : 55.72
+	"Using it" : 27.8
+	"Not using it" : 72.2
 
 ```
 
@@ -19,8 +19,8 @@ Provide the distribution of usage of the header 'x-frame-options' across all dom
 
 ```mermaid
 pie
-	"Using it" : 46.67
-	"Not using it" : 53.33
+	"Using it" : 29.46
+	"Not using it" : 70.54
 
 ```
 
@@ -31,8 +31,8 @@ Provide the distribution of usage of the header 'x-content-type-options' across 
 
 ```mermaid
 pie
-	"Using it" : 38.82
-	"Not using it" : 61.18
+	"Using it" : 27.45
+	"Not using it" : 72.55
 
 ```
 
@@ -43,8 +43,8 @@ Provide the distribution of usage of the header 'content-security-policy' across
 
 ```mermaid
 pie
-	"Using it" : 21.58
-	"Not using it" : 78.42
+	"Using it" : 12.13
+	"Not using it" : 87.86
 
 ```
 
@@ -55,8 +55,8 @@ Provide the distribution of usage of the header 'x-permitted-cross-domain-polici
 
 ```mermaid
 pie
-	"Using it" : 3.15
-	"Not using it" : 96.85
+	"Using it" : 2.26
+	"Not using it" : 97.74
 
 ```
 
@@ -67,8 +67,8 @@ Provide the distribution of usage of the header 'referrer-policy' across all dom
 
 ```mermaid
 pie
-	"Using it" : 14.85
-	"Not using it" : 85.15
+	"Using it" : 10.17
+	"Not using it" : 89.83
 
 ```
 
@@ -79,8 +79,8 @@ Provide the distribution of usage of the header 'clear-site-data' across all dom
 
 ```mermaid
 pie
-	"Using it" : 0.01
-	"Not using it" : 99.99
+	"Using it" : 0.0
+	"Not using it" : 100.0
 
 ```
 
@@ -91,8 +91,8 @@ Provide the distribution of usage of the header 'cross-origin-embedder-policy' a
 
 ```mermaid
 pie
-	"Using it" : 0.13
-	"Not using it" : 99.87
+	"Using it" : 0.09
+	"Not using it" : 99.91
 
 ```
 
@@ -103,8 +103,8 @@ Provide the distribution of usage of the header 'cross-origin-opener-policy' acr
 
 ```mermaid
 pie
-	"Using it" : 1.08
-	"Not using it" : 98.92
+	"Using it" : 0.43
+	"Not using it" : 99.57
 
 ```
 
@@ -115,8 +115,8 @@ Provide the distribution of usage of the header 'cross-origin-resource-policy' a
 
 ```mermaid
 pie
-	"Using it" : 0.95
-	"Not using it" : 99.05
+	"Using it" : 0.34
+	"Not using it" : 99.66
 
 ```
 
@@ -127,8 +127,8 @@ Provide the distribution of usage of the header 'cache-control' across all domai
 
 ```mermaid
 pie
-	"Using it" : 69.13
-	"Not using it" : 30.87
+	"Using it" : 54.81
+	"Not using it" : 45.19
 
 ```
 
@@ -139,8 +139,8 @@ Provide the distribution of usage of the header 'feature-policy' across all doma
 
 ```mermaid
 pie
-	"Using it" : 1.88
-	"Not using it" : 98.12
+	"Using it" : 1.09
+	"Not using it" : 98.91
 
 ```
 
@@ -151,8 +151,8 @@ Provide the distribution of usage of the header 'permissions-policy' across all 
 
 ```mermaid
 pie
-	"Using it" : 8.63
-	"Not using it" : 91.37
+	"Using it" : 5.03
+	"Not using it" : 94.97
 
 ```
 
@@ -163,8 +163,8 @@ Provide the distribution of usage of the header 'expect-ct' across all domains a
 
 ```mermaid
 pie
-	"Using it" : 20.02
-	"Not using it" : 79.98
+	"Using it" : 25.99
+	"Not using it" : 74.01
 
 ```
 
@@ -175,8 +175,8 @@ Provide the distribution of usage of the header 'public-key-pins' across all dom
 
 ```mermaid
 pie
-	"Using it" : 0.14
-	"Not using it" : 99.86
+	"Using it" : 0.07
+	"Not using it" : 99.93
 
 ```
 
@@ -187,8 +187,8 @@ Provide the distribution of usage of the header 'x-xss-protection' across all do
 
 ```mermaid
 pie
-	"Using it" : 31.07
-	"Not using it" : 68.93
+	"Using it" : 20.46
+	"Not using it" : 79.54
 
 ```
 
@@ -199,8 +199,8 @@ Provide the distribution of usage of the header 'x-frame-options' across all dom
 
 ```mermaid
 pie
-	"Insecure conf" : 1.67
-	"Secure conf" : 98.33
+	"Insecure conf" : 1.05
+	"Secure conf" : 98.95
 
 ```
 
@@ -211,8 +211,8 @@ Provide the distribution of usage of the '[preload](https://developer.mozilla.or
 
 ```mermaid
 pie
-	"Using it" : 32.18
-	"Not using it" : 67.82
+	"Using it" : 20.73
+	"Not using it" : 79.27
 
 ```
 
