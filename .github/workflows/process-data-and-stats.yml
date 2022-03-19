@@ -28,4 +28,12 @@ jobs:
     - name: Set up Git user
       run: git config --global user.email "gha@github.com"; git config --global user.name "GHActionBot"
     - name: Commit update
-      run: git commit -am "Sync stats data"; git push        
+      run: git commit -am "Sync stats data"; git push
+    - name: Attach generated artefacts      
+      uses: actions/upload-artifact@v3
+      with:
+        name: data
+        path: |
+          data/data.db
+          data/input.csv
+          stats.md

@@ -2,10 +2,9 @@
 """
 Script gathering the information about HTTP security headers usage based on the "MAJESTIC Top 1 million sites CSV file" data source.
 
-No external dependency was used to faciliate the portability of the script.
+Minimize external dependency to faciliate the portability of the script.
 """
-import urllib.request
-import ssl
+import requests
 import sqlite3
 import time
 import concurrent.futures
@@ -20,6 +19,12 @@ THREADS_COUNT = 30
 TIMEOUT = 10
 DATA_DB_FILE = f"{DATA_FOLDER}/data.db"
 CSV_INPUT_FILE = f"{DATA_FOLDER}/input.csv"
+REQ_HEADERS = {"User-Agent": USER_AGENT,
+               "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+               "Accept-Language": "en-US,en;q=0.5",
+               "Accept-Encoding": "gzip, deflate, br"}
+requests.packages.urllib3.disable_warnings(
+    requests.packages.urllib3.exceptions.InsecureRequestWarning)
 
 # Utility functions
 
@@ -27,18 +32,8 @@ CSV_INPUT_FILE = f"{DATA_FOLDER}/input.csv"
 def get_security_headers(url):
     sec_headers = {}
     try:
-        # urllib follow redirect by default - Mimic browser requests
-        ctx = ssl.create_default_context()
-        ctx.check_hostname = False
-        ctx.verify_mode = ssl.CERT_NONE
-        req = urllib.request.Request(url)
-        req.add_header("User-Agent", USER_AGENT)
-        req.add_header(
-            "Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8")
-        req.add_header("Accept-Language", "en-US,en;q=0.5")
-        req.add_header("Accept-Encoding", "gzip, deflate, br")
-        resp = urllib.request.urlopen(
-            req, context=ctx, timeout=TIMEOUT)
+        resp = requests.get(url, verify=False, timeout=TIMEOUT,
+                            headers=REQ_HEADERS, allow_redirects=True)
         for header in resp.headers:
             if header.lower() in OSHP_SECURITY_HEADERS:
                 sec_headers[header] = resp.headers[header]
