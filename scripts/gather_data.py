@@ -4,7 +4,6 @@ Script gathering the information about HTTP security headers usage based on the 
 
 No external dependency was used to faciliate the portability of the script.
 """
-import urllib3
 import urllib.request
 import ssl
 import sqlite3
@@ -12,7 +11,6 @@ import time
 import concurrent.futures
 
 # Constants
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 NUMBER_OF_DOMAINS_TO_TAKE = 10000
 VERBOSE = False
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0"
