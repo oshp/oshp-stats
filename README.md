@@ -1,6 +1,6 @@
 # oshp-stats
 
-Stats about HTTP response security headers usage mentioned by the OSHP.
+[Statistics](stats.md) about HTTP response security headers usage mentioned by the OSHP.
 
 See this [issue](https://github.com/OWASP/www-project-secure-headers/issues/61) for details.
 
@@ -24,7 +24,10 @@ $ rm majestic_million.csv
 
 > They are all stored in the [scripts](scripts) folder and they are Python 3.x based.
 
+The script [oshp_headers](scripts/oshp_headers.py) contains the HTTP headers suggested by the OSHP project. It is a configuration material.
+
 * [gather_data](scripts/gather_data.py): Script gathering the information about HTTP security headers usage in a SQLITE database based on the "MAJESTIC Top 1 million sites CSV file" data source.
+* [generate_stats_md_file](scripts/generate_stats_md_file.py): Script using the gathered data to generate/update the markdown file [stats](stats.md), with [mermaid pie charts](https://mermaid-js.github.io/mermaid/#/pie) with differents statistics about HTTP security headers usage.
 
 # Data
 

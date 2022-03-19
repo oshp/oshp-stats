@@ -9,9 +9,10 @@ import ssl
 import sqlite3
 import time
 import concurrent.futures
+from oshp_headers import OSHP_SECURITY_HEADERS
 
 # Constants
-NUMBER_OF_DOMAINS_TO_TAKE = 100000
+NUMBER_OF_DOMAINS_TO_TAKE = 10000
 VERBOSE = False
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0"
 DATA_FOLDER = "../data"
@@ -19,10 +20,6 @@ THREADS_COUNT = 30
 TIMEOUT = 10
 DATA_DB_FILE = f"{DATA_FOLDER}/data.db"
 CSV_INPUT_FILE = f"{DATA_FOLDER}/input.csv"
-OSHP_SECURITY_HEADERS = ["strict-transport-security", "x-frame-options", "x-content-type-options", "content-security-policy",
-                         "x-permitted-cross-domain-policies", "referrer-policy", "clear-site-data",
-                         "cross-origin-embedder-policy", "cross-origin-opener-policy", "cross-origin-resource-policy",
-                         "cache-control", "feature-policy", "permissions-policy", "expect-ct", "public-key-pins", "x-xss-protection"]
 
 # Utility functions
 
