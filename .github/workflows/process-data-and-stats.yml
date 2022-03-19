@@ -21,6 +21,7 @@ jobs:
     - name: Run data gathering script
       run: |
         cd scripts; python gather_data.py
+        ls -l --block-size=M data/data.db
     - name: Run statistics generation script
       run: |
         cd scripts; python generate_stats_md_file.py
