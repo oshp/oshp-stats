@@ -1,6 +1,6 @@
 # oshp-stats
 
-[Statistics](stats.md) about HTTP response security headers usage mentioned by the OSHP.
+[Statistics](stats.md) about HTTP response security headers usage mentioned by the [OWASP Secure Headers Project](https://owasp.org/www-project-secure-headers/).
 
 See this [issue](https://github.com/OWASP/www-project-secure-headers/issues/61) for details.
 

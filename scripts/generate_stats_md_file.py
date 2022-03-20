@@ -8,6 +8,8 @@ Source:
     https://mermaid-js.github.io/mermaid/#/pie
 """
 import sqlite3
+import re
+from collections import Counter
 from datetime import datetime
 from oshp_headers import OSHP_SECURITY_HEADERS
 
@@ -24,6 +26,11 @@ SECTION_TEMPLATE = """
 %s
 ```
 """
+SECTION_TEMPLATE_NO_MERMAID_CODE = """
+## %s
+
+%s
+"""
 
 # Utility functions
 
@@ -38,7 +45,11 @@ def execute_query_against_data_db(sql_query):
 
 def add_stats_section(title, description, chart_mermaid_code):
     with open(MD_FILE, mode="a", encoding="utf-8") as f:
-        md_code = SECTION_TEMPLATE % (title, description, chart_mermaid_code)
+        if chart_mermaid_code is not None and len(chart_mermaid_code.strip()) > 0:
+            md_code = SECTION_TEMPLATE % (
+                title, description, chart_mermaid_code)
+        else:
+            md_code = SECTION_TEMPLATE_NO_MERMAID_CODE % (title, description)
         f.write(f"{md_code}\n")
 
 
@@ -109,9 +120,50 @@ def compute_hsts_preload_global_usage():
     add_stats_section(title, description, pie_chart_code)
 
 
+def compute_secure_headers_global_usage():
+    title = "Global usage of secure headers"
+    description = f"Provide the distribution of usage of secure headers across all domains analyzed."
+    query = "select count(domain) from stats where http_header_name is NULL"
+    count_of_domains = execute_query_against_data_db(query)[0][0]
+    domains_count = get_domains_count()
+    percentage_of_domains = (count_of_domains * 100) / domains_count
+    dataset_tuples = [("Not using them", percentage_of_domains),
+                      ("Using them", (100-percentage_of_domains))]
+    pie_chart_code = get_pie_chart_code(title, dataset_tuples)
+    add_stats_section(title, description, pie_chart_code)
+
+
+def compute_hsts_average_maxage_global_usage():
+    title = "Global common 'max-age' values of the Strict Transport Security header"
+    query = "select lower(http_header_value) from stats where lower(http_header_name) = 'strict-transport-security' and lower(http_header_value) like '%max-age=%'"
+    header_values = execute_query_against_data_db(query)
+    expr = r'max-age\s*=\s*(\-?"?\d+"?)'
+    # Gather values for max-age attribute
+    values = []
+    for header_value in header_values:
+        v = header_value[0].strip('\n\r\t').replace('"', '')
+        matches = re.findall(expr, v)
+        if len(matches) > 0:
+            values.append(int(matches[0]))
+    # Find the most popular one
+    occurences = Counter(values)
+    maxage_most_popular_value = 0
+    current_max_occurence_count = 0
+    for maxage_value, occurence_count in occurences.items():
+        if occurence_count > current_max_occurence_count:
+            current_max_occurence_count = occurence_count
+            maxage_most_popular_value = maxage_value
+    description = f"* Most common value used is {maxage_most_popular_value} seconds ({round(maxage_most_popular_value/60)} minutes) across all domains analyzed."
+    description += f"\n* Maximum value used is {max(values)} seconds ({round(max(values)/60)} minutes) across all domains analyzed."
+    description += f"\n* Minimum value used is {min(values)} seconds ({round(min(values)/60)} minutes) across all domains analyzed."
+    add_stats_section(title, description, None)
+
+
 if __name__ == "__main__":
     init_stats_file()
     for header_name in OSHP_SECURITY_HEADERS:
         compute_header_global_usage(header_name)
     compute_insecure_framing_configuration_global_usage()
     compute_hsts_preload_global_usage()
+    compute_secure_headers_global_usage()
+    compute_hsts_average_maxage_global_usage()

@@ -1,5 +1,5 @@
 # Statistics
-> :timer_clock: Last update: 03/20/2022 at 07:33:55 - Domains analyzed count: 200000.
+> :timer_clock: Last update: 03/20/2022 at 09:53:52 - Domains analyzed count: 200000.
 
 ## Global usage of header 'strict-transport-security'
 
@@ -215,4 +215,23 @@ pie
 	"Not using it" : 81.12
 
 ```
+
+
+## Global usage of secure headers
+
+Provide the distribution of usage of secure headers across all domains analyzed.
+
+```mermaid
+pie
+	"Not using them" : 27.43
+	"Using them" : 72.57
+
+```
+
+
+## Global common 'max-age' values of the Strict Transport Security header
+
+* Most common value used is 31536000 seconds (525600 minutes) across all domains analyzed.
+* Maximum value used is 1234513412313 seconds (20575223539 minutes) across all domains analyzed.
+* Minimum value used is -198782781 seconds (-3313046 minutes) across all domains analyzed.
 
