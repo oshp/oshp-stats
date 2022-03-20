@@ -48,8 +48,9 @@ Files:
 
 The update is scheduled in the following way via [two dedicated github actions workfows](.github/workflows):
 
-* The first day of every month the data database is updated.
-* The second day of every month the statistic file is updated.
+* The **first day** of every month the data database is updated.
+* The **second day** of every month the statistic file is updated:
+  * The files [input.csv](data/input.csv), [data.db](data/data.db) and [stats.md](stats.md) are attached to the build as artefacts. Therefore, it is possible to access to the statistics and its corresponding input data for dates in the past.
 
 # Note
 
