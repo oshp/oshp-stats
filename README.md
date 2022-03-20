@@ -28,12 +28,16 @@ The script [oshp_headers](scripts/oshp_headers.py) contains the HTTP headers sug
 
 [Visual Studio Code](https://code.visualstudio.com/) is used for the scripts development. A Visual Studio Code [workspace file](project.code-workspace) is provided for the project.
 
+Files:
+
 * [gather_data](scripts/gather_data.py): Script gathering the information about HTTP security headers usage in a [SQLITE database](data/data.db) based on the "MAJESTIC Top 1 million sites CSV file" data source.
 * [generate_stats_md_file](scripts/generate_stats_md_file.py): Script using the gathered data to generate/update the markdown file [stats](stats.md), with [mermaid pie charts](https://mermaid-js.github.io/mermaid/#/pie) with differents statistics about HTTP security headers usage.
 
 # Data
 
 > They are all stored in the [data](data) folder.
+
+Files:
 
 * [input.csv](data/input.csv): MAJESTIC Top 1 million sites list formated as one entry `ranking,domain` by line.
 * [data.db](data/data.db): SQLITE database with information about HTTP security headers usage.
