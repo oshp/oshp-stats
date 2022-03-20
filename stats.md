@@ -1,74 +1,14 @@
 # Statistics
-> :timer_clock: Last update: 03/20/2022 at 09:08:22 - Domains analyzed count: 200000.
+> :timer_clock: Last update: 03/20/2022 at 09:11:08 - Domains analyzed count: 200000.
 
-## Global usage of header 'strict-transport-security'
+## Global usage of header 'cache-control'
 
-Provide the distribution of usage of the header 'strict-transport-security' across all domains analyzed.
-
-```mermaid
-pie
-	"Using it" : 25.15
-	"Not using it" : 74.85
-
-```
-
-
-## Global usage of header 'x-frame-options'
-
-Provide the distribution of usage of the header 'x-frame-options' across all domains analyzed.
+Provide the distribution of usage of the header 'cache-control' across all domains analyzed.
 
 ```mermaid
 pie
-	"Using it" : 26.92
-	"Not using it" : 73.08
-
-```
-
-
-## Global usage of header 'x-content-type-options'
-
-Provide the distribution of usage of the header 'x-content-type-options' across all domains analyzed.
-
-```mermaid
-pie
-	"Using it" : 25.17
-	"Not using it" : 74.83
-
-```
-
-
-## Global usage of header 'content-security-policy'
-
-Provide the distribution of usage of the header 'content-security-policy' across all domains analyzed.
-
-```mermaid
-pie
-	"Using it" : 11.0
-	"Not using it" : 89.0
-
-```
-
-
-## Global usage of header 'x-permitted-cross-domain-policies'
-
-Provide the distribution of usage of the header 'x-permitted-cross-domain-policies' across all domains analyzed.
-
-```mermaid
-pie
-	"Using it" : 2.21
-	"Not using it" : 97.79
-
-```
-
-
-## Global usage of header 'referrer-policy'
-
-Provide the distribution of usage of the header 'referrer-policy' across all domains analyzed.
-
-```mermaid
-pie
-	"Using it" : 9.44
-	"Not using it" : 90.56
+	"Using it" : 53.6
+	"Not using it" : 46.4
 
 ```
 
@@ -81,6 +21,18 @@ Provide the distribution of usage of the header 'clear-site-data' across all dom
 pie
 	"Using it" : 0.0
 	"Not using it" : 100.0
+
+```
+
+
+## Global usage of header 'content-security-policy'
+
+Provide the distribution of usage of the header 'content-security-policy' across all domains analyzed.
+
+```mermaid
+pie
+	"Using it" : 11.0
+	"Not using it" : 89.0
 
 ```
 
@@ -121,14 +73,14 @@ pie
 ```
 
 
-## Global usage of header 'cache-control'
+## Global usage of header 'expect-ct'
 
-Provide the distribution of usage of the header 'cache-control' across all domains analyzed.
+Provide the distribution of usage of the header 'expect-ct' across all domains analyzed.
 
 ```mermaid
 pie
-	"Using it" : 53.6
-	"Not using it" : 46.4
+	"Using it" : 25.48
+	"Not using it" : 74.52
 
 ```
 
@@ -157,18 +109,6 @@ pie
 ```
 
 
-## Global usage of header 'expect-ct'
-
-Provide the distribution of usage of the header 'expect-ct' across all domains analyzed.
-
-```mermaid
-pie
-	"Using it" : 25.48
-	"Not using it" : 74.52
-
-```
-
-
 ## Global usage of header 'public-key-pins'
 
 Provide the distribution of usage of the header 'public-key-pins' across all domains analyzed.
@@ -177,6 +117,66 @@ Provide the distribution of usage of the header 'public-key-pins' across all dom
 pie
 	"Using it" : 0.06
 	"Not using it" : 99.94
+
+```
+
+
+## Global usage of header 'referrer-policy'
+
+Provide the distribution of usage of the header 'referrer-policy' across all domains analyzed.
+
+```mermaid
+pie
+	"Using it" : 9.44
+	"Not using it" : 90.56
+
+```
+
+
+## Global usage of header 'strict-transport-security'
+
+Provide the distribution of usage of the header 'strict-transport-security' across all domains analyzed.
+
+```mermaid
+pie
+	"Using it" : 25.15
+	"Not using it" : 74.85
+
+```
+
+
+## Global usage of header 'x-content-type-options'
+
+Provide the distribution of usage of the header 'x-content-type-options' across all domains analyzed.
+
+```mermaid
+pie
+	"Using it" : 25.17
+	"Not using it" : 74.83
+
+```
+
+
+## Global usage of header 'x-frame-options'
+
+Provide the distribution of usage of the header 'x-frame-options' across all domains analyzed.
+
+```mermaid
+pie
+	"Using it" : 26.92
+	"Not using it" : 73.08
+
+```
+
+
+## Global usage of header 'x-permitted-cross-domain-policies'
+
+Provide the distribution of usage of the header 'x-permitted-cross-domain-policies' across all domains analyzed.
+
+```mermaid
+pie
+	"Using it" : 2.21
+	"Not using it" : 97.79
 
 ```
 
