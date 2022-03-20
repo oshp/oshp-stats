@@ -100,4 +100,4 @@ if __name__ == "__main__":
         for row in curs.fetchall():
             print(f"Records {row[0]}.")
     delay = round((time.time() - start_time) / 60)
-    print(f"[+] Gathering performed in in {delay} minutes")
+    print(f"[+] Gathering performed in {delay} minutes")

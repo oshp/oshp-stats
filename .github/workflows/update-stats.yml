@@ -1,10 +1,12 @@
-name: Gather data and update statistics MD file 
+name: Update statistics MD file 
 on:
   workflow_dispatch:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  schedule:
+    - cron: '0 0 2 * *'    
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,10 +20,6 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Run data gathering script
-      run: |
-        cd scripts; python gather_data.py
-        ls -l --block-size=M ../data/data.db
     - name: Run statistics generation script
       run: |
         cd scripts; python generate_stats_md_file.py

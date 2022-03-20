@@ -1,0 +1,26 @@
+name: Gather data
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 1 * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.10"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Run data gathering script
+      run: |
+        cd scripts; python gather_data.py
+        ls -l --block-size=M ../data/data.db
+    - name: Set up Git user
+      run: git config --global user.email "gha@github.com"; git config --global user.name "GHActionBot"
+    - name: Commit update
+      run: git commit -am "Sync data DB"; git push

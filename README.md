@@ -35,3 +35,16 @@ The script [oshp_headers](scripts/oshp_headers.py) contains the HTTP headers sug
 
 * [input.csv](data/input.csv): MAJESTIC Top 1 million sites list formated as one entry `number,domain` by line.
 * [data.db](data/data.db): SQLITE database with information about HTTP security headers usage.
+
+# Data and statistics update
+
+> :information_source: Only the first 200000 entries of the CSV datasource are used to fit the processing timeframe allowed for a github action workfows using the free tiers.
+
+The update is scheduled in the following way via two dedicated github actions workfows:
+
+* The first day of every month the data database is updated.
+* The second day of every month the statistic file is updated.
+
+# Note
+
+If other type of charts are need then the [quickchart.io](https://quickchart.io/) python API will be used (free part).
