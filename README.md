@@ -26,6 +26,8 @@ $ rm majestic_million.csv
 
 The script [oshp_headers](scripts/oshp_headers.py) contains the HTTP headers suggested by the OSHP project. It is a configuration material.
 
+[Visual Studio Code](https://code.visualstudio.com/) is used for the scripts development. A Visual Studio Code [workspace file](project.code-workspace) is provided for the project.
+
 * [gather_data](scripts/gather_data.py): Script gathering the information about HTTP security headers usage in a [SQLITE database](data/data.db) based on the "MAJESTIC Top 1 million sites CSV file" data source.
 * [generate_stats_md_file](scripts/generate_stats_md_file.py): Script using the gathered data to generate/update the markdown file [stats](stats.md), with [mermaid pie charts](https://mermaid-js.github.io/mermaid/#/pie) with differents statistics about HTTP security headers usage.
 
