@@ -1,5 +1,17 @@
 # Statistics
-> :timer_clock: Last update: 03/20/2022 at 09:11:08 - Domains analyzed count: 200000.
+> :timer_clock: Last update: 03/20/2022 at 09:27:41 - Domains analyzed count: 200000.
+
+## Global usage of secure headers
+
+Provide the distribution of usage of secure headers across all domains analyzed.
+
+```mermaid
+pie
+	"Not using them" : 27.43
+	"Using them" : 72.57
+
+```
+
 
 ## Global usage of header 'cache-control'
 
@@ -213,18 +225,6 @@ Provide the distribution of usage of the '[preload](https://developer.mozilla.or
 pie
 	"Using it" : 18.88
 	"Not using it" : 81.12
-
-```
-
-
-## Global usage of secure headers
-
-Provide the distribution of usage of secure headers across all domains analyzed.
-
-```mermaid
-pie
-	"Not using them" : 27.43
-	"Using them" : 72.57
 
 ```
 
