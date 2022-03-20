@@ -162,9 +162,9 @@ def compute_hsts_average_maxage_global_usage():
 if __name__ == "__main__":
     init_stats_file()
     OSHP_SECURITY_HEADERS.sort()
+    compute_secure_headers_global_usage()
     for header_name in OSHP_SECURITY_HEADERS:
         compute_header_global_usage(header_name)
     compute_insecure_framing_configuration_global_usage()
     compute_hsts_preload_global_usage()
-    compute_secure_headers_global_usage()
     compute_hsts_average_maxage_global_usage()
