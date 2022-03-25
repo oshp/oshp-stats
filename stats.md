@@ -1,5 +1,5 @@
 # Statistics
-> :timer_clock: Last update: 03/25/2022 at 14:45:41 - Domains analyzed count: 200000.
+> :timer_clock: Last update: 03/25/2022 at 15:28:37 - Domains analyzed count: 200000.
 
 > :mag_right: View the markdown code to see the exact percentage because mermaid use integer values for rendering.
 
@@ -47,6 +47,18 @@ Provide the distribution of usage of the header 'content-security-policy' across
 pie
 	"Using it" : 11.24
 	"Not using it" : 88.76
+
+```
+
+
+## Global usage of header 'content-security-policy-report-only'
+
+Provide the distribution of usage of the header 'content-security-policy-report-only' across all domains analyzed.
+
+```mermaid
+pie
+	"Using it" : 0.0
+	"Not using it" : 100.0
 
 ```
 
