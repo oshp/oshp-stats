@@ -1,5 +1,5 @@
 # Statistics
-> :timer_clock: Last update: 03/25/2022 at 15:28:37 - Domains analyzed count: 200000.
+> :timer_clock: Last update: 03/25/2022 at 17:24:44 - Domains analyzed count: 200000.
 
 > :mag_right: View the markdown code to see the exact percentage because mermaid use integer values for rendering.
 
@@ -262,4 +262,20 @@ pie
 * Most common value used is 31536000 seconds (525600 minutes) across all domains analyzed.
 * Maximum value used is 1234513412313 seconds (20575223539 minutes) across all domains analyzed.
 * Minimum value used is -199009003 seconds (-3316817 minutes) across all domains analyzed.
+
+
+## Global usage of content security policy with directives allowing unsafe expressions
+
+Provide the distribution of content security policy allowing unsafe expressions across all domains analyzed.
+
+Determine if a CSP policy contains `(default-src|script-src|script-src-elem|script-src-attr|style-src)` directives using `(unsafe-inline|unsafe-hashes|unsafe-eval)` expressions.
+
+Based on [Report-URI CSP](https://report-uri.com/home/generate) generator allowed instructions for CSP directives.
+
+```mermaid
+pie
+	"Using unsafe" : 3.62
+	"Not using unsafe" : 96.38
+
+```
 

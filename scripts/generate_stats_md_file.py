@@ -76,6 +76,24 @@ def get_pie_chart_code(title, dataset_tuples):
     return code
 
 
+def csp_contain_unsafe_expression(csp_policy):
+    contain_unsafe_expression = False
+    # Determine if a CSP policy contains (default-src|script-src|script-src-elem|script-src-attr|style-src) directives using (unsafe-inline|unsafe-hashes|unsafe-eval) expressions
+    # Based on "https://report-uri.com/home/generate" generator allowed instructions for CSP directives
+    exp_all_unsafe_expressions = r'(unsafe-inline|unsafe-hashes|unsafe-eval)'
+    exp_style_unsafe_expressions = r'(unsafe-inline|unsafe-hashes)'
+    exp_directive_name_allowing_all_unsafe_expressions = r'(default-src|script-src|script-src-elem|script-src-attr)'
+    directives = csp_policy.split(";")
+    for directive in directives:
+        if len(re.findall(exp_directive_name_allowing_all_unsafe_expressions, directive)) > 0 and len(re.findall(exp_all_unsafe_expressions, directive)) > 0:
+            contain_unsafe_expression = True
+            break
+        elif directive.strip().startswith("style-src") and len(re.findall(exp_style_unsafe_expressions, directive)) > 0:
+            contain_unsafe_expression = True
+            break
+    return contain_unsafe_expression
+
+
 # Functions in charge of generate stats sections
 
 
@@ -176,6 +194,24 @@ def compute_hsts_average_maxage_global_usage():
     add_stats_section(title, description, None)
 
 
+def compute_csp_using_directives_with_unsafe_expressions_configuration_global_usage():
+    header_name = "content-security-policy"
+    title = f"Global usage of content security policy with directives allowing unsafe expressions"
+    description = f"Provide the distribution of content security policy allowing unsafe expressions across all domains analyzed.\n\nDetermine if a CSP policy contains `(default-src|script-src|script-src-elem|script-src-attr|style-src)` directives using `(unsafe-inline|unsafe-hashes|unsafe-eval)` expressions.\n\nBased on [Report-URI CSP](https://report-uri.com/home/generate) generator allowed instructions for CSP directives."
+    query = f"select lower(http_header_value) from stats where lower(http_header_name) like '{header_name}%' and lower(http_header_value) like '%unsafe%'"
+    header_values = execute_query_against_data_db(query)
+    count_of_domains = 0
+    for header_value in header_values:
+        if csp_contain_unsafe_expression(header_value[0]):
+            count_of_domains += 1
+    domains_count = get_domains_count()
+    percentage_of_domains = (count_of_domains * 100) / domains_count
+    dataset_tuples = [("Using unsafe", percentage_of_domains),
+                      ("Not using unsafe", (100-percentage_of_domains))]
+    pie_chart_code = get_pie_chart_code(title, dataset_tuples)
+    add_stats_section(title, description, pie_chart_code)
+
+
 if __name__ == "__main__":
     init_stats_file()
     OSHP_SECURITY_HEADERS.sort()
@@ -186,3 +222,4 @@ if __name__ == "__main__":
     compute_insecure_referrer_configuration_global_usage()
     compute_hsts_preload_global_usage()
     compute_hsts_average_maxage_global_usage()
+    compute_csp_using_directives_with_unsafe_expressions_configuration_global_usage()
