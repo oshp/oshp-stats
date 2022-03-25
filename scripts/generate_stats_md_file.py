@@ -59,6 +59,8 @@ def init_stats_file():
         f.write(f"# Statistics\n")
         f.write(
             f"> :timer_clock: Last update: {cdate} - Domains analyzed count: {get_domains_count()}.\n")
+        f.write(
+            f"\n> :mag_right: View the markdown code to see the exact percentage because mermaid use integer values for rendering.\n")
 
 
 def get_domains_count():
@@ -69,6 +71,7 @@ def get_pie_chart_code(title, dataset_tuples):
     #code = f"pie title {title}\n"
     code = f"pie\n"
     for dataset_tuple in dataset_tuples:
+        # Note: Mermaid use integer value when rendering
         code += f"\t\"{dataset_tuple[0]}\" : {round(dataset_tuple[1],2)}\n"
     return code
 
@@ -95,7 +98,7 @@ def compute_header_global_usage(header_name):
 def compute_insecure_framing_configuration_global_usage():
     header_name = "x-frame-options"
     title = f"Global usage of insecure framing configuration via the header '{header_name}'"
-    description = f"Provide the distribution of usage of the header '{header_name}' across all domains analyzed with a insecure framing configuration: value different from DENY or SAMEORIGIN including unsupported values."
+    description = f"Provide the distribution of usage of the header '{header_name}' across all domains analyzed with a insecure framing configuration: value different from `DENY` or `SAMEORIGIN` including unsupported values."
     query = f"select count(*) from stats where lower(http_header_name) = '{header_name}' and lower(http_header_value) not in ('deny','sameorigin')"
     count_of_domains = execute_query_against_data_db(query)[0][0]
     domains_count = get_domains_count()
@@ -133,6 +136,20 @@ def compute_secure_headers_global_usage():
     add_stats_section(title, description, pie_chart_code)
 
 
+def compute_insecure_referrer_configuration_global_usage():
+    header_name = "referrer-policy"
+    title = f"Global usage of insecure referrer configuration via the header '{header_name}'"
+    description = f"Provide the distribution of usage of the header '{header_name}' across all domains analyzed with a insecure referrer configuration: value set to `unsafe-url`."
+    query = f"select count(*) from stats where lower(http_header_name) = '{header_name}' and lower(http_header_value) = 'unsafe-url'"
+    count_of_domains = execute_query_against_data_db(query)[0][0]
+    domains_count = get_domains_count()
+    percentage_of_domains = (count_of_domains * 100) / domains_count
+    dataset_tuples = [("Insecure conf", percentage_of_domains),
+                      ("Secure conf", (100-percentage_of_domains))]
+    pie_chart_code = get_pie_chart_code(title, dataset_tuples)
+    add_stats_section(title, description, pie_chart_code)
+
+
 def compute_hsts_average_maxage_global_usage():
     title = "Global common 'max-age' values of the Strict Transport Security header"
     query = "select lower(http_header_value) from stats where lower(http_header_name) = 'strict-transport-security' and lower(http_header_value) like '%max-age=%'"
@@ -166,5 +183,6 @@ if __name__ == "__main__":
     for header_name in OSHP_SECURITY_HEADERS:
         compute_header_global_usage(header_name)
     compute_insecure_framing_configuration_global_usage()
+    compute_insecure_referrer_configuration_global_usage()
     compute_hsts_preload_global_usage()
     compute_hsts_average_maxage_global_usage()
