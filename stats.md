@@ -1,5 +1,5 @@
 # Statistics
-> :timer_clock: Last update: 03/25/2022 at 14:31:28 - Domains analyzed count: 200000.
+> :timer_clock: Last update: 03/25/2022 at 15:44:05 - Domains analyzed count: 200000.
 
 > :mag_right: View the markdown code to see the exact percentage because mermaid use integer values for rendering.
 
@@ -221,12 +221,14 @@ pie
 
 ## Global usage of insecure referrer configuration via the header 'referrer-policy'
 
-Provide the distribution of usage of the header 'referrer-policy' across all domains analyzed with a insecure referrer configuration: value set to `unsafe-url`.
+Provide the distribution of usage of the header 'referrer-policy' across all domains analyzed with a insecure referrer configuration: value set to `unsafe-url` or `no-referrer-when-downgrade`.
+
+`no-referrer-when-downgrade` was included because it send origin, path, and querystring when the protocol security level stays the same (HTTPS is very often in place).
 
 ```mermaid
 pie
-	"Insecure conf" : 0.16
-	"Secure conf" : 99.84
+	"Insecure conf" : 3.75
+	"Secure conf" : 96.25
 
 ```
 

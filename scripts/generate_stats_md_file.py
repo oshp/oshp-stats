@@ -139,8 +139,8 @@ def compute_secure_headers_global_usage():
 def compute_insecure_referrer_configuration_global_usage():
     header_name = "referrer-policy"
     title = f"Global usage of insecure referrer configuration via the header '{header_name}'"
-    description = f"Provide the distribution of usage of the header '{header_name}' across all domains analyzed with a insecure referrer configuration: value set to `unsafe-url`."
-    query = f"select count(*) from stats where lower(http_header_name) = '{header_name}' and lower(http_header_value) = 'unsafe-url'"
+    description = f"Provide the distribution of usage of the header '{header_name}' across all domains analyzed with a insecure referrer configuration: value set to `unsafe-url` or `no-referrer-when-downgrade`.\n\n`no-referrer-when-downgrade` was included because it send origin, path, and querystring when the protocol security level stays the same (HTTPS is very often in place)."
+    query = f"select count(*) from stats where lower(http_header_name) = '{header_name}' and lower(http_header_value) in ('unsafe-url','no-referrer-when-downgrade')"
     count_of_domains = execute_query_against_data_db(query)[0][0]
     domains_count = get_domains_count()
     percentage_of_domains = (count_of_domains * 100) / domains_count
