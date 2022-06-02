@@ -1,5 +1,5 @@
 # Statistics
-> :timer_clock: Last update: 05/02/2022 at 01:06:48 - Domains analyzed count: 200000.
+> :timer_clock: Last update: 06/02/2022 at 01:14:11 - Domains analyzed count: 200000.
 
 > :mag_right: View the markdown code to see the exact percentage because mermaid use integer values for rendering.
 
@@ -9,8 +9,8 @@ Provide the distribution of usage of secure headers across all domains analyzed.
 
 ```mermaid
 pie
-	"Not using them" : 26.1
-	"Using them" : 73.9
+	"Not using them" : 26.15
+	"Using them" : 73.85
 
 ```
 
@@ -21,8 +21,8 @@ Provide the distribution of usage of the header 'cache-control' across all domai
 
 ```mermaid
 pie
-	"Using it" : 53.61
-	"Not using it" : 46.39
+	"Using it" : 53.66
+	"Not using it" : 46.34
 
 ```
 
@@ -45,8 +45,8 @@ Provide the distribution of usage of the header 'content-security-policy' across
 
 ```mermaid
 pie
-	"Using it" : 11.44
-	"Not using it" : 88.56
+	"Using it" : 11.59
+	"Not using it" : 88.41
 
 ```
 
@@ -57,8 +57,8 @@ Provide the distribution of usage of the header 'content-security-policy-report-
 
 ```mermaid
 pie
-	"Using it" : 0.98
-	"Not using it" : 99.02
+	"Using it" : 0.95
+	"Not using it" : 99.05
 
 ```
 
@@ -81,8 +81,8 @@ Provide the distribution of usage of the header 'cross-origin-opener-policy' acr
 
 ```mermaid
 pie
-	"Using it" : 0.36
-	"Not using it" : 99.64
+	"Using it" : 0.38
+	"Not using it" : 99.62
 
 ```
 
@@ -93,8 +93,8 @@ Provide the distribution of usage of the header 'cross-origin-resource-policy' a
 
 ```mermaid
 pie
-	"Using it" : 0.24
-	"Not using it" : 99.76
+	"Using it" : 0.25
+	"Not using it" : 99.75
 
 ```
 
@@ -105,8 +105,8 @@ Provide the distribution of usage of the header 'expect-ct' across all domains a
 
 ```mermaid
 pie
-	"Using it" : 26.83
-	"Not using it" : 73.17
+	"Using it" : 26.71
+	"Not using it" : 73.29
 
 ```
 
@@ -117,8 +117,8 @@ Provide the distribution of usage of the header 'feature-policy' across all doma
 
 ```mermaid
 pie
-	"Using it" : 0.91
-	"Not using it" : 99.09
+	"Using it" : 0.92
+	"Not using it" : 99.08
 
 ```
 
@@ -129,8 +129,8 @@ Provide the distribution of usage of the header 'permissions-policy' across all 
 
 ```mermaid
 pie
-	"Using it" : 4.7
-	"Not using it" : 95.3
+	"Using it" : 4.85
+	"Not using it" : 95.15
 
 ```
 
@@ -153,8 +153,8 @@ Provide the distribution of usage of the header 'referrer-policy' across all dom
 
 ```mermaid
 pie
-	"Using it" : 9.66
-	"Not using it" : 90.34
+	"Using it" : 9.68
+	"Not using it" : 90.32
 
 ```
 
@@ -165,8 +165,8 @@ Provide the distribution of usage of the header 'strict-transport-security' acro
 
 ```mermaid
 pie
-	"Using it" : 25.64
-	"Not using it" : 74.36
+	"Using it" : 25.97
+	"Not using it" : 74.03
 
 ```
 
@@ -177,8 +177,8 @@ Provide the distribution of usage of the header 'x-content-type-options' across 
 
 ```mermaid
 pie
-	"Using it" : 25.54
-	"Not using it" : 74.46
+	"Using it" : 25.65
+	"Not using it" : 74.35
 
 ```
 
@@ -189,8 +189,8 @@ Provide the distribution of usage of the header 'x-frame-options' across all dom
 
 ```mermaid
 pie
-	"Using it" : 27.05
-	"Not using it" : 72.95
+	"Using it" : 27.1
+	"Not using it" : 72.9
 
 ```
 
@@ -201,8 +201,8 @@ Provide the distribution of usage of the header 'x-permitted-cross-domain-polici
 
 ```mermaid
 pie
-	"Using it" : 2.24
-	"Not using it" : 97.76
+	"Using it" : 2.26
+	"Not using it" : 97.74
 
 ```
 
@@ -213,8 +213,8 @@ Provide the distribution of usage of the header 'x-xss-protection' across all do
 
 ```mermaid
 pie
-	"Using it" : 18.89
-	"Not using it" : 81.11
+	"Using it" : 18.85
+	"Not using it" : 81.15
 
 ```
 
@@ -239,8 +239,8 @@ Provide the distribution of usage of the header 'referrer-policy' across all dom
 
 ```mermaid
 pie
-	"Insecure conf" : 3.82
-	"Secure conf" : 96.18
+	"Insecure conf" : 3.78
+	"Secure conf" : 96.22
 
 ```
 
@@ -251,8 +251,8 @@ Provide the distribution of usage of the '[preload](https://developer.mozilla.or
 
 ```mermaid
 pie
-	"Using it" : 19.28
-	"Not using it" : 80.72
+	"Using it" : 19.49
+	"Not using it" : 80.51
 
 ```
 
@@ -261,7 +261,7 @@ pie
 
 * Most common value used is 31536000 seconds (525600 minutes) across all domains analyzed.
 * Maximum value used is 1234513412313 seconds (20575223539 minutes) across all domains analyzed.
-* Minimum value used is -202447595 seconds (-3374127 minutes) across all domains analyzed.
+* Minimum value used is -205125689 seconds (-3418761 minutes) across all domains analyzed.
 
 
 ## Global usage of content security policy with directives allowing unsafe expressions
