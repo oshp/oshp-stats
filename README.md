@@ -30,7 +30,7 @@ $ rm majestic_million.csv
 
 The script [oshp_headers](scripts/oshp_headers.py) contains the HTTP headers suggested by the OSHP project. It is a configuration material.
 
-[Visual Studio Code](https://code.visualstudio.com/) is used for the scripts development. A Visual Studio Code [workspace file](project.code-workspace) is provided for the project.
+[Visual Studio Code](https://code.visualstudio.com/) is used for the scripts development. A Visual Studio Code [workspace file](project.code-workspace) is provided for the project with [recommended extensions](.vscode/extensions.json).
 
 Files:
 
