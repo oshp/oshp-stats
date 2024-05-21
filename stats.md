@@ -1,5 +1,5 @@
 # Statistics
-> :timer_clock: Last update: 05/02/2024 at 00:52:23 - Domains analyzed count: 200000.
+> :timer_clock: Last update: 05/21/2024 at 07:53:51 - Domains analyzed count: 200000.
 
 > :mag_right: View the markdown code to see the exact percentage because mermaid use integer values for rendering.
 
