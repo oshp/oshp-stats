@@ -48,7 +48,7 @@ Files:
 
 # Data and statistics update
 
-> :information_source: Only the first 200000 entries of the CSV datasource are used to fit the processing timeframe allowed for a github action workfows using the free tiers.
+> :information_source: Only the first 190000 entries of the CSV datasource are used to fit the processing timeframe allowed for a github action workfows using the free tiers.
 
 The update is scheduled in the following way via [two dedicated github actions workfows](.github/workflows):
 
