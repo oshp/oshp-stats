@@ -8,6 +8,8 @@
 
 See this [issue](https://github.com/OWASP/www-project-secure-headers/issues/61) for details.
 
+📊 See the [Statistics](stats.md).
+
 # Data source
 
 > MAJESTIC was used instead of the **CISCO Top 1 million sites CSV file** because it contain less malware domains.
