@@ -31,25 +31,10 @@ requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.
 OSHP_SECURITY_HEADERS = []
 
 
-def load_oshp_headers():
-    resp = requests.get(OSHP_SECURITY_HEADERS_FILE_lOCATION, timeout=TIMEOUT)
-    if resp.status_code != 200:
-        raise Exception(f"Status code {resp.status_code} received!")
-    for http_header in resp.json()["headers"]:
-        OSHP_SECURITY_HEADERS.append(http_header["name"].lower())
-    with open(OSHP_SECURITY_HEADERS_EXTRA_FILE_LOCATION, mode="r", encoding="utf-8") as f:
-        http_headers = f.read().splitlines()
-        for http_header in http_headers:
-            OSHP_SECURITY_HEADERS.append(http_header.lower().strip(" \n\r\t"))
-    OSHP_SECURITY_HEADERS = list(dict.fromkeys(OSHP_SECURITY_HEADERS))
-    OSHP_SECURITY_HEADERS.sort()
-
-
 def get_security_headers(url):
     sec_headers = {}
     try:
-        resp = requests.get(url, verify=False, timeout=TIMEOUT,
-                            headers=REQ_HEADERS, allow_redirects=True)
+        resp = requests.get(url, verify=False, timeout=TIMEOUT, headers=REQ_HEADERS, allow_redirects=True)
         for header in resp.headers:
             if header.lower() in OSHP_SECURITY_HEADERS:
                 sec_headers[header] = resp.headers[header]
@@ -97,7 +82,17 @@ def worker(domain):
 if __name__ == "__main__":
     start_time = time.time()
     print("[+] Load the list OSHP of headers to includes...")
-    load_oshp_headers()
+    resp = requests.get(OSHP_SECURITY_HEADERS_FILE_lOCATION, timeout=TIMEOUT)
+    if resp.status_code != 200:
+        raise Exception(f"Status code {resp.status_code} received!")
+    for http_header in resp.json()["headers"]:
+        OSHP_SECURITY_HEADERS.append(http_header["name"].lower())
+    with open(OSHP_SECURITY_HEADERS_EXTRA_FILE_LOCATION, mode="r", encoding="utf-8") as f:
+        http_headers = f.read().splitlines()
+        for http_header in http_headers:
+            OSHP_SECURITY_HEADERS.append(http_header.lower().strip(" \n\r\t"))
+    OSHP_SECURITY_HEADERS = list(dict.fromkeys(OSHP_SECURITY_HEADERS))
+    OSHP_SECURITY_HEADERS.sort()
     print("[+] Initialize DB...")
     with sqlite3.connect(DATA_DB_FILE) as connection:
         curs = connection.cursor()
