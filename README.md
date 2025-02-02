@@ -8,6 +8,7 @@
 
 # Data source
 
+> [!TIP]
 > 💡 MAJESTIC was used instead of the **CISCO Top 1 million sites CSV file** because it contain less malware domains.
 
 * [MAJESTIC Top 1 million sites list](https://blog.majestic.com/development/majestic-million-csv-daily/).
