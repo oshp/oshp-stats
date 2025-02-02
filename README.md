@@ -4,6 +4,8 @@
 
 📊 [Statistics](https://owasp.org/www-project-secure-headers/index.html#div-statistics) about HTTP response security headers usage mentioned by the [OWASP Secure Headers Project](https://owasp.org/www-project-secure-headers/) (OSHP).
 
+💾 This project gather data, about the usage of HTTP response security headers, into a [SQLITE database](data/data.db) to allow the generation of statistics in a second time.
+
 💡 See this [issue](https://github.com/OWASP/www-project-secure-headers/issues/61) for details.
 
 # Data source
