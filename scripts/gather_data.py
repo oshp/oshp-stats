@@ -93,6 +93,7 @@ if __name__ == "__main__":
             OSHP_SECURITY_HEADERS.append(http_header.lower().strip(" \n\r\t"))
     OSHP_SECURITY_HEADERS = list(dict.fromkeys(OSHP_SECURITY_HEADERS))
     OSHP_SECURITY_HEADERS.sort()
+    print(",".join(OSHP_SECURITY_HEADERS))
     print("[+] Initialize DB...")
     with sqlite3.connect(DATA_DB_FILE) as connection:
         curs = connection.cursor()
