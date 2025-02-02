@@ -2,11 +2,9 @@
 
 [![Gather data](https://github.com/oshp/oshp-stats/actions/workflows/update-datasource.yml/badge.svg?branch=main)](https://github.com/oshp/oshp-stats/actions/workflows/update-datasource.yml)
 
-[Statistics](https://owasp.org/www-project-secure-headers/index.html#div-statistics) about HTTP response security headers usage mentioned by the [OWASP Secure Headers Project](https://owasp.org/www-project-secure-headers/) (OSHP).
+📊[Statistics](https://owasp.org/www-project-secure-headers/index.html#div-statistics) about HTTP response security headers usage mentioned by the [OWASP Secure Headers Project](https://owasp.org/www-project-secure-headers/) (OSHP).
 
 💡See this [issue](https://github.com/OWASP/www-project-secure-headers/issues/61) for details.
-
-📊Access to the [Statistics](https://owasp.org/www-project-secure-headers/index.html#div-statistics).
 
 # Data source
 
