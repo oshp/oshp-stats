@@ -11,7 +11,7 @@ import concurrent.futures
 
 
 # Constants
-OSHP_SECURITY_HEADERS_FILE_lOCATION = "https://owasp.org/www-project-secure-headers/ci/headers_add.json"
+OSHP_SECURITY_HEADERS_FILE_lOCATION = "https://raw.githubusercontent.com/OWASP/www-project-secure-headers/refs/heads/master/ci/headers_add.json"
 OSHP_SECURITY_HEADERS_EXTRA_FILE_LOCATION = "oshp_headers_extra_to_include.txt"
 NUMBER_OF_DOMAINS_TO_TAKE = 150000
 VERBOSE = False
