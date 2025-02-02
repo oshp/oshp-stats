@@ -1,3 +1,4 @@
+
 OSHP_SECURITY_HEADERS = ["strict-transport-security", "x-frame-options", "x-content-type-options", "content-security-policy",
                          "x-permitted-cross-domain-policies", "referrer-policy", "clear-site-data",
                          "cross-origin-embedder-policy", "cross-origin-opener-policy", "cross-origin-resource-policy",

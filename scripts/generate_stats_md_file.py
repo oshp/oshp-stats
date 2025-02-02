@@ -4,6 +4,8 @@ Script using the gathered data to generate/update a markdown file with mermaid p
 
 Mermaid was used because GitHub support mermaid syntax in markdown file.
 
+!!!NOT USED ANYMORE!!!
+
 Source:
     https://mermaid-js.github.io/mermaid/#/pie
 """
@@ -68,11 +70,11 @@ def get_domains_count():
 
 
 def get_pie_chart_code(title, dataset_tuples):
-    #code = f"pie title {title}\n"
+    # code = f"pie title {title}\n"
     code = f"pie\n"
     for dataset_tuple in dataset_tuples:
         # Note: Mermaid use integer value when rendering
-        code += f"\t\"{dataset_tuple[0]}\" : {round(dataset_tuple[1],2)}\n"
+        code += f"\t\"{dataset_tuple[0]}\" : {round(dataset_tuple[1], 2)}\n"
     return code
 
 

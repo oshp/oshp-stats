@@ -8,12 +8,14 @@ import requests
 import sqlite3
 import time
 import concurrent.futures
-from oshp_headers import OSHP_SECURITY_HEADERS
+
 
 # Constants
+OSHP_SECURITY_HEADERS_FILE_lOCATION = "https://owasp.org/www-project-secure-headers/ci/headers_add.json"
+OSHP_SECURITY_HEADERS_EXTRA_FILE_LOCATION = "oshp_headers_extra_to_include.txt"
 NUMBER_OF_DOMAINS_TO_TAKE = 150000
 VERBOSE = False
-USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0"
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36"
 DATA_FOLDER = "../data"
 THREADS_COUNT = 30
 TIMEOUT = 10
@@ -23,10 +25,24 @@ REQ_HEADERS = {"User-Agent": USER_AGENT,
                "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
                "Accept-Language": "en-US,en;q=0.5",
                "Accept-Encoding": "gzip, deflate, br"}
-requests.packages.urllib3.disable_warnings(
-    requests.packages.urllib3.exceptions.InsecureRequestWarning)
+requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
 
 # Utility functions
+OSHP_SECURITY_HEADERS = []
+
+
+def load_oshp_headers():
+    resp = requests.get(OSHP_SECURITY_HEADERS_FILE_lOCATION, timeout=TIMEOUT)
+    if resp.status_code != 200:
+        raise Exception(f"Status code {resp.status_code} received!")
+    for http_header in resp.json()["headers"]:
+        OSHP_SECURITY_HEADERS.append(http_header["name"].lower())
+    with open(OSHP_SECURITY_HEADERS_EXTRA_FILE_LOCATION, mode="r", encoding="utf-8") as f:
+        http_headers = f.read().splitlines()
+        for http_header in http_headers:
+            OSHP_SECURITY_HEADERS.append(http_header.lower().strip(" \n\r\t"))
+    OSHP_SECURITY_HEADERS = list(dict.fromkeys(OSHP_SECURITY_HEADERS))
+    OSHP_SECURITY_HEADERS.sort()
 
 
 def get_security_headers(url):
@@ -80,6 +96,8 @@ def worker(domain):
 
 if __name__ == "__main__":
     start_time = time.time()
+    print("[+] Load the list OSHP of headers to includes...")
+    load_oshp_headers()
     print("[+] Initialize DB...")
     with sqlite3.connect(DATA_DB_FILE) as connection:
         curs = connection.cursor()
