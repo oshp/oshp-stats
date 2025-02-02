@@ -58,7 +58,7 @@ $ rm majestic_million.csv
 💻 The update is scheduled in the following way:
 
 * The **first day** of every month the data database is updated via this [workflow](.github/workflows/update-datasource.yml).
-* The **third day** of every month the statistic data is updated via this [workflow](https://github.com/OWASP/www-project-secure-headers/blob/master/.github/workflows/tab-stats-headers-generate-related-files.yml).
+* The **fifth day** of every month the statistic data is updated via this [workflow](https://github.com/OWASP/www-project-secure-headers/blob/master/.github/workflows/tab-stats-headers-generate-related-files.yml).
 
 # Note
 
