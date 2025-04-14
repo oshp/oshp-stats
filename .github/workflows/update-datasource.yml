@@ -3,6 +3,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 0 1 * *'
+permissions: read-all    
 jobs:
   build:
     runs-on: ubuntu-latest
