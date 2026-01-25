@@ -1,3 +1,6 @@
+> [!CAUTION]
+> The project was transferred to the main repository of the OSHP project. Precisely into this [location](https://github.com/OWASP/www-project-secure-headers/tree/master/subprojects/statistics).
+
 # OWASP Secure Headers Project statistics
 
 [![Gather data](https://github.com/oshp/oshp-stats/actions/workflows/update-datasource.yml/badge.svg?branch=main)](https://github.com/oshp/oshp-stats/actions/workflows/update-datasource.yml)
